@@ -79,14 +79,15 @@ export const SocketProvider = ({ children }) => {
       });
 
       // Typing indicators
-      newSocket.on('userTyping', ({ user: typingUser, isTyping }) => {
+      newSocket.on('userTyping', ({ userId, username, isTyping }) => {
+        console.log('Typing event received:', { userId, username, isTyping });
         setTypingUsers(prev => {
           if (isTyping) {
-            if (!prev.find(u => u.id === typingUser.id)) {
-              return [...prev, typingUser];
+            if (!prev.find(u => u.id === userId)) {
+              return [...prev, { id: userId, username: username }];
             }
           } else {
-            return prev.filter(u => u.id !== typingUser.id);
+            return prev.filter(u => u.id !== userId);
           }
           return prev;
         });
@@ -124,11 +125,12 @@ export const SocketProvider = ({ children }) => {
     }
   };
 
-  const emitTyping = (isTyping) => {
-    if (socket && isConnected) {
+  const emitTyping = (isTyping, chatType = 'general', chatId = null) => {
+    if (socket && isConnected && user) {
       socket.emit('typing', {
-        sender: user.username,
-        isTyping: isTyping
+        isTyping: isTyping,
+        chatType: chatType,
+        chatId: chatId
       });
     }
   };

@@ -195,9 +195,7 @@ const Chat = () => {
       socket.emit('typing', {
         isTyping: typing,
         chatType: activeChat === 'general' ? 'general' : 'direct',
-        chatId: activeChat,
-        userId: user.id,
-        username: user.username
+        chatId: activeChat === 'general' ? null : activeChat
       });
     }
   };

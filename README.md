@@ -73,15 +73,17 @@ A modern, real-time chat application built with React, Node.js, and MongoDB. Fea
 
 4. **Set up environment variables**
    
-   Create `server/.env` file:
-   ```env
-   HTTP_PORT=5000
-   TCP_PORT=9000
-   MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/chat-app?retryWrites=true&w=majority
-   JWT_SECRET=your-super-secret-jwt-key-here
-   JWT_EXPIRES_IN=24h
-   NODE_ENV=development
+   Copy the example environment file and update with your credentials:
+   ```bash
+   cd server
+   cp .env.example .env
+   # Edit .env file with your actual MongoDB Atlas and JWT credentials
    ```
+
+   > ⚠️ **Security Note**: 
+   > - Replace placeholder values in `.env` with your actual credentials
+   > - Never commit `.env` files to version control
+   > - The `.env.example` file shows the required variables structure
 
 5. **Start the application**
 
@@ -192,11 +194,17 @@ echo '{"type":"message","to":"all","text":"Hello via TCP"}' | nc localhost 9000
 ### Environment Variables for Production
 ```env
 NODE_ENV=production
-MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/chat-app
-JWT_SECRET=production-secret-key-very-long-and-secure
+MONGO_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@YOUR_CLUSTER.mongodb.net/chat-app?retryWrites=true&w=majority
+JWT_SECRET=GENERATE_A_SECURE_JWT_SECRET_FOR_PRODUCTION_USE
 HTTP_PORT=5000
 TCP_PORT=9000
 ```
+
+> 🔒 **Production Security**: 
+> - Use strong, unique passwords for MongoDB Atlas
+> - Generate a cryptographically secure JWT secret (32+ characters)
+> - Enable IP whitelisting in MongoDB Atlas
+> - Use environment variables or secure secret management
 
 ## 🤝 Contributing
 

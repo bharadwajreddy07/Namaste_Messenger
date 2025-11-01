@@ -450,8 +450,8 @@ header a:hover {
 
 /* Sidebar Styles */
 .sidebar-normal {
-  flex: 0 0 900px;
-  width: 900px;
+  flex: 0 0 400px;
+  width: 400px;
   min-height: 100vh;
   transition: all 0.3s ease;
 }
@@ -586,8 +586,8 @@ footer .list-unstyled li {
 }
 
 .chat-sidebar-scroll::-webkit-scrollbar {
-  width: 0.3px;
-  height: 4px;
+  width: 1px;
+  height: 1px;
 }
 
 .chat-sidebar-scroll::-webkit-scrollbar-track {
@@ -627,7 +627,7 @@ footer .list-unstyled li {
 }
 
 .chat-messages-scroll::-webkit-scrollbar {
-  width: 2px;
+  width: 3px;
 }
 
 .chat-messages-scroll::-webkit-scrollbar-track {
