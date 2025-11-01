@@ -1,0 +1,771 @@
+/* Bootstrap and Custom CSS Only - No Tailwind */
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Message animations */
+.message-enter {
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Typing indicator animation */
+.typing-dots {
+  display: inline-flex;
+  align-items: center;
+}
+
+.typing-dots span {
+  height: 4px;
+  width: 4px;
+  background-color: #64748b;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 1px;
+  animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+.typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingAnimation {
+  0%, 80%, 100% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Online status pulse */
+.online-pulse {
+  animation: onlinePulse 2s infinite;
+}
+
+@keyframes onlinePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Smooth transitions */
+.transition-all-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button hover effects */
+.btn-hover {
+  transition: all 0.2s ease;
+  transform: translateY(0);
+}
+
+.btn-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-hover:active {
+  transform: translateY(0);
+}
+
+/* Input focus effects */
+.input-focus {
+  transition: all 0.2s ease;
+}
+
+.input-focus:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Additional typing indicator animations */
+.typing-indicator {
+  display: inline-flex;
+  align-items: center;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #9CA3AF;
+  border-radius: 50%;
+  margin-right: 4px;
+  animation: typingBounce 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Message status animations */
+.message-sending {
+  opacity: 0.7;
+  animation: messageSending 1s ease-in-out infinite;
+}
+
+@keyframes messageSending {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Typing indicator for compact version */
+.typing-indicator-compact span {
+  animation: typingPulse 1.4s infinite ease-in-out;
+}
+
+.typing-indicator-compact span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-indicator-compact span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingPulse {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Bubble typing indicator */
+.typing-indicator-bubble span {
+  animation: typingBubbleBounce 1.4s infinite;
+}
+
+.typing-indicator-bubble span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator-bubble span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.typing-indicator-bubble span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes typingBubbleBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Background grid pattern for home page */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Additional animations for home page */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Improved backdrop blur support */
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Enhanced gradient backgrounds */
+.gradient-bg-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-secondary {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Message Reply Styles */
+.message-container:hover .reply-btn {
+  opacity: 1 !important;
+}
+
+.reply-btn-left {
+  left: -40px;
+}
+
+.reply-btn-right {
+  right: -40px;
+}
+
+.message-bubble {
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+/* WhatsApp-style Reply Button */
+.reply-btn-visible {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #666 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.reply-btn-visible:hover {
+  background-color: #ffffff !important;
+  color: #0d6efd !important;
+  opacity: 1 !important;
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Reply indicator styling */
+.reply-indicator {
+  border-left: 3px solid #0d6efd;
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Message container improvements */
+.message-container {
+  transition: all 0.2s ease;
+}
+
+.message-container:hover {
+  transform: translateY(-1px);
+}
+
+/* Emoji Picker Styling */
+.emoji-picker {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-btn {
+  transition: all 0.2s ease;
+}
+
+.emoji-btn:hover {
+  background-color: #e9ecef !important;
+  transform: scale(1.2);
+}
+
+/* Unified gradient for header and hero section */
+header, .navbar, .hero-section {
+  background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%) !important;
+  color: #ffffff !important;
+}
+
+/* Navbar text styles */
+.navbar a,
+header a {
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+header a:hover {
+  color: #d1ecff !important; /* Lighter hover */
+}
+
+/* Hero section styling */
+.hero-section {
+  text-align: center;
+  color: #ffffff !important;
+  padding: 120px 20px;
+}
+
+.hero-section h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #f3faff;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.hero-section .btn-primary {
+  background-color: #ffffff !important;
+  color: #0072ff !important;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+  background-color: #e6f6ff !important;
+  color: #005bb5 !important;
+}
+
+.hero-section .btn-outline-light {
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.hero-section .btn-outline-light:hover {
+  background-color: #ffffff !important;
+  color: #0072ff !important;
+}
+
+/* Large Reply Button Styles */
+.reply-btn-visible-large {
+  background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3) !important;
+  font-weight: 500 !important;
+}
+
+.reply-btn-visible-large:hover {
+  background: linear-gradient(135deg, #005bb5 0%, #0099cc 100%) !important;
+  color: #ffffff !important;
+  transform: scale(1.05) translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0, 114, 255, 0.4) !important;
+}
+
+/* Smaller original reply button for fallback */
+.reply-btn-visible {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #0072ff !important;
+  border: 1px solid rgba(0, 114, 255, 0.2) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.reply-btn-visible:hover {
+  background-color: #ffffff !important;
+  color: #005bb5 !important;
+  opacity: 1 !important;
+  transform: scale(1.1) translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.2) !important;
+}
+
+/* Gradient Classes */
+.gradient-primary {
+  background: linear-gradient(90deg, #00B4DB, #0083B0) !important;
+}
+
+/* Chat Sidebar Improvements and Collapse Behavior */
+.list-group-item {
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.list-group-item:hover {
+  border-left: 3px solid #0072ff;
+  transform: translateX(5px);
+}
+
+.list-group-item.active {
+  background: linear-gradient(90deg, rgba(0, 114, 255, 0.1), rgba(0, 198, 255, 0.05)) !important;
+  border-left: 3px solid #0072ff !important;
+  border-color: #0072ff !important;
+}
+
+/* Sidebar Styles */
+.sidebar-normal {
+  flex: 0 0 900px;
+  width: 900px;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.sidebar-collapsed {
+  flex: 0 0 60px !important;
+  width: 60px !important;
+  max-width: 60px !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebar-collapsed .list-group-item {
+  justify-content: center;
+  text-align: center;
+  padding: 15px 8px !important;
+}
+
+.sidebar-collapsed .list-group-item > div > div:last-child,
+.sidebar-collapsed h6,
+.sidebar-collapsed .border-bottom {
+  display: none;
+}
+
+/* Small scrollbar for sidebar */
+.sidebar-collapsed .overflow-auto {
+  overflow-y: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: #0072ff #f1f1f1;
+}
+
+.sidebar-collapsed .overflow-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-collapsed .overflow-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidebar-collapsed .overflow-auto::-webkit-scrollbar-thumb {
+  background: #0072ff;
+  border-radius: 2px;
+}
+
+.sidebar-collapsed .overflow-auto::-webkit-scrollbar-thumb:hover {
+  background: #005bb5;
+}
+
+.max-width-75 {
+  max-width: 75%;
+}
+
+/* Clean Footer Styling */
+footer {
+  background-color: #f8f9fa !important;
+  border-top: 1px solid #e9ecef;
+}
+
+footer h6 {
+  color: #0d6efd !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+footer .text-muted {
+  color: #6c757d !important;
+  font-size: 0.875rem;
+}
+
+footer .text-muted:hover {
+  color: #0d6efd !important;
+  transition: color 0.3s ease;
+}
+
+footer .bg-primary {
+  background-color: #0d6efd !important;
+}
+
+footer .badge {
+  font-size: 0.75rem;
+}
+
+footer .border-top {
+  border-color: #e9ecef !important;
+}
+
+/* Footer link icons */
+footer i.bi {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+footer .list-unstyled li {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Status badge animation */
+.badge.bg-success {
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 10px;
+  min-height: 25px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280;
+}
+
+
+/* Chat sidebar scrollbar styling - Small */
+.chat-sidebar-scroll {
+  max-height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.chat-sidebar-scroll::-webkit-scrollbar {
+  width: 0.3px;
+  height: 4px;
+}
+
+.chat-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0px;
+}
+
+.chat-sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 123, 255, 0.3);
+  min-height: 20px;
+  max-height: 40px;
+  border-radius: 0px;
+}
+
+.chat-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 123, 255, 0.5);
+}
+
+/* Additional scrollbar height reduction */
+.chat-sidebar-scroll {
+  scrollbar-width: none; 
+}
+
+.chat-sidebar-scroll::-webkit-scrollbar-button {
+  display: none;
+  height: 0px;
+}
+
+.chat-sidebar-scroll::-webkit-scrollbar-corner {
+  display: none;
+}
+
+/* Chat messages scrollbar styling - Bigger */
+.chat-messages-scroll {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.chat-messages-scroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+.chat-messages-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 2px;
+}
+
+.chat-messages-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border-radius: 2px;
+}
+
+.chat-messages-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+/* Firefox scrollbar styling - minimal */
+.chat-sidebar-scroll {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  scrollbar-color: transparent transparent;
+}
+
+.chat-messages-scroll {
+  scrollbar-width: auto;
+  scrollbar-color: #007bff rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced sidebar styling for 900px width */
+.sidebar-normal .list-group-item {
+  padding: 40px 60px !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  min-height: 120px !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.sidebar-normal .list-group-item:hover {
+  background-color: #f8f9fa !important;
+  transform: translateX(2px) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.sidebar-normal .list-group-item .fw-medium {
+  font-size: 1.8rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+}
+
+.sidebar-normal h6 {
+  padding-left: 60px !important;
+  padding-right: 60px !important;
+  padding-top: 35px !important;
+  padding-bottom: 30px !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: #54656f !important;
+}
+
+/* Enhanced avatar styling for 900px sidebar */
+.sidebar-normal .bg-primary.rounded-circle {
+  width: 90px !important;
+  height: 90px !important;
+  font-size: 35px !important;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2) !important;
+  transition: all 0.2s ease !important;
+}
+
+.sidebar-normal .list-group-item:hover .bg-primary.rounded-circle {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Better spacing for 900px layout */
+.sidebar-normal .me-3 {
+  margin-right: 40px !important;
+}
+
+/* Enhanced status and online indicators */
+.sidebar-normal small {
+  font-size: 0.9rem !important;
+  margin-top: 4px !important;
+}
+
+/* Reply indicator white styling */
+.reply-indicator.bg-white {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef !important;
+}
+
+.reply-indicator.bg-white .text-secondary {
+  color: #6c757d !important;
+}
+
+/* Remove unnecessary spacing and ensure full width usage */
+.container-fluid .row.h-100,
+.container-fluid .d-flex.h-100 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.container-fluid .row.h-100 > div,
+.container-fluid .d-flex.h-100 > div {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Ensure chat area takes full available width */
+.chat-expanded {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Fix layout when sidebar is not collapsed */
+.row .col-md-3,
+.row .col-lg-3,
+.row .col-md-9,
+.row .col-lg-9 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* White Reply Button Styling */
+.reply-btn-visible-large.btn-light {
+  background-color: white !important;
+  color: #6c757d !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+.reply-btn-visible-large.btn-light:hover {
+  background-color: #f8f9fa !important;
+  color: #495057 !important;
+  border-color: #adb5bd !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.reply-btn-visible-large.btn-light:active {
+  background-color: #e9ecef !important;
+  transform: translateY(0);
+}
+
