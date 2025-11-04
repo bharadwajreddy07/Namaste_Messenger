@@ -21,8 +21,9 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (user && token) {
-      // Initialize socket connection
-      const newSocket = io('http://localhost:5000', {
+      // Initialize socket connection - use environment variable
+      const socketUrl = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
+      const newSocket = io(socketUrl, {
         auth: {
           token: token,
           userId: user.id,

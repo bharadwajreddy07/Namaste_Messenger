@@ -74,9 +74,26 @@ async function start() {
 
 	const app = express();
 	
-	// CORS configuration
+	// CORS configuration for development and production
+	const allowedOrigins = [
+		'http://localhost:5173',
+		'http://127.0.0.1:5173',
+		'https://namaste-messenger.vercel.app',
+		'https://namaste-messenger-git-main-bharadwajreddy07.vercel.app',
+		'https://namaste-messenger.onrender.com'
+	];
+	
 	app.use(cors({
-		origin: ['http://localhost:5173', 'http://127.0.0.1:5173'], // Vite dev server
+		origin: (origin, callback) => {
+			// Allow requests with no origin (mobile apps, Postman, etc.)
+			if (!origin) return callback(null, true);
+			
+			if (allowedOrigins.indexOf(origin) === -1) {
+				const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+				return callback(new Error(msg), false);
+			}
+			return callback(null, true);
+		},
 		credentials: true,
 		methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 		allowedHeaders: ['Content-Type', 'Authorization']
@@ -115,7 +132,7 @@ async function start() {
 	const httpServer = http.createServer(app);
 	const io = new IOServer(httpServer, { 
 		cors: { 
-			origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:5174', 'http://localhost:5175'],
+			origin: allowedOrigins,
 			credentials: true
 		}
 	});
