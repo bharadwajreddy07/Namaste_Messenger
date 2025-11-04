@@ -79,7 +79,6 @@ async function start() {
 		'http://localhost:5173',
 		'http://127.0.0.1:5173',
 		'https://namaste-messenger.vercel.app',
-		'https://namaste-messenger-git-main-bharadwajreddy07.vercel.app',
 		'https://namaste-messenger.onrender.com'
 	];
 	
@@ -88,7 +87,13 @@ async function start() {
 			// Allow requests with no origin (mobile apps, Postman, etc.)
 			if (!origin) return callback(null, true);
 			
+			// Allow any Vercel deployment URL
+			if (origin.includes('.vercel.app')) {
+				return callback(null, true);
+			}
+			
 			if (allowedOrigins.indexOf(origin) === -1) {
+				console.error('CORS blocked origin:', origin);
 				const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
 				return callback(new Error(msg), false);
 			}
@@ -132,7 +137,13 @@ async function start() {
 	const httpServer = http.createServer(app);
 	const io = new IOServer(httpServer, { 
 		cors: { 
-			origin: allowedOrigins,
+			origin: (origin, callback) => {
+				if (!origin) return callback(null, true);
+				if (origin.includes('.vercel.app') || allowedOrigins.indexOf(origin) !== -1) {
+					return callback(null, true);
+				}
+				return callback(new Error('CORS not allowed'), false);
+			},
 			credentials: true
 		}
 	});
