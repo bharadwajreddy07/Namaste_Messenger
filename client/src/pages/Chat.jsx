@@ -255,7 +255,7 @@ const Chat = () => {
         <div className="container-fluid">
           <span className="navbar-brand">
             <i className="bi bi-chat-dots-fill me-2"></i>
-            ChatApp
+            Namaste Messenger
           </span>
           
           <div className="d-flex align-items-center text-white">

@@ -106,8 +106,8 @@ const Footer = () => {
             <h6 className="text-primary fw-bold mb-3">Connect</h6>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="mailto:support@chatapp.in" className="text-muted text-decoration-none d-flex align-items-center">
-                  <i className="bi bi-envelope me-2"></i> support@chatapp.in
+                <a href="mailto:support@namastemessenger.com" className="text-muted text-decoration-none d-flex align-items-center">
+                  <i className="bi bi-envelope me-2"></i> support@namastemessenger.com
                 </a>
               </li>
               <li className="mb-2">
@@ -141,7 +141,7 @@ const Footer = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <p className="mb-0 text-muted">
-                © 2025 ChatApp. All rights reserved.
+                © 2025 Namaste Messenger. All rights reserved.
               </p>
             </div>
             <div className="col-md-6 text-md-end">

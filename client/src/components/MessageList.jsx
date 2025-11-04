@@ -157,7 +157,7 @@ const MessageList = ({ messages, currentUser, onlineUsers, typingUsers }) => {
                   : 'bg-gray-700 text-white rounded-bl-md'
               } ${showAvatar ? '' : 'mt-1'}`}
             >
-              <p className="whitespace-pre-wrap">{message.text}</p>
+              <p className="whitespace-pre-wrap break-words text-justify" style={{wordBreak: 'break-word', overflowWrap: 'break-word', hyphens: 'auto'}}>{message.text}</p>
               
               {/* Message status */}
               {isCurrentUser && (

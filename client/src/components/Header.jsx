@@ -22,8 +22,9 @@ const Header = () => {
           >
             <div className="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center me-3" 
                  style={{width: '45px', height: '45px', fontSize: '1.3rem'}}>
+              💬
             </div>
-            <span className="fs-2 fw-bold">ChatApp</span>
+            <span className="fs-2 fw-bold">Namaste Messenger</span>
           </Link>
 
           {/* Mobile toggle button */}

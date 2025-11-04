@@ -47,7 +47,7 @@ const Home = () => {
           <div className="row justify-content-center text-center">
             <div className="col-lg-8">
               <h1 className="fw-bold mb-4">
-                Welcome to ChatApp
+                Welcome to Namaste Messenger
               </h1>
               <p className="lead mb-5">
                 Connect, chat, and collaborate in real-time with our modern messaging platform. 

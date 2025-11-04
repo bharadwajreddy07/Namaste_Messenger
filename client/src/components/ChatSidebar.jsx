@@ -20,7 +20,7 @@ const ChatSidebar = ({
   onLogout
 }) => {
   const sidebarClasses = `
-    fixed inset-y-0 left-0 z-50 w-64 bg-chat-sidebar transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:inset-0
+    fixed inset-y-0 left-0 z-50 w-96 bg-chat-sidebar transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:inset-0
     ${isOpen ? 'translate-x-0' : '-translate-x-full'}
   `;
 

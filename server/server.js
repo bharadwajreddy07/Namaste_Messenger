@@ -87,7 +87,7 @@ async function start() {
 	// Health check endpoints
 	app.get('/', (req, res) => {
 		res.json({ 
-			message: 'Chat App Backend is running!', 
+			message: 'Namaste Messenger Backend is running!', 
 			status: 'healthy',
 			timestamp: new Date().toISOString()
 		});
@@ -98,7 +98,7 @@ async function start() {
 		res.json({
 			status: 'OK',
 			success: true,
-			message: 'Chat App Backend is healthy',
+			message: 'Namaste Messenger Backend is healthy',
 			timestamp: new Date().toISOString(),
 			version: '1.0.0'
 		});
@@ -361,7 +361,7 @@ async function start() {
 	});
 
 	httpServer.listen(HTTP_PORT, () => {
-		console.log(` Chat App Backend running on http://localhost:${HTTP_PORT}`);
+		console.log(` Namaste Messenger Backend running on http://localhost:${HTTP_PORT}`);
 		console.log(` WebSocket server ready for real-time chat`);
 	});
 
